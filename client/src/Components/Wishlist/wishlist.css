@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.w_container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 1;
+    height: 35vh;
+    margin-bottom: 0.5%;
+}
+
+.w_book_details {
+    flex: 1 1;
+    display: flex;
+    justify-content: space-around;
+    border: black 0.1px solid;
+    padding: 20px;
+    height: 35vh;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+.w_book_img {
+    width: 15%;
+    border-radius: 8px;
+}
+
+.w_book_info {
+    flex: 1;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.w_book_name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.w_author,
+.w_date {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.w_description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.w_actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.w_price {
+    font-size: 20px;
+}

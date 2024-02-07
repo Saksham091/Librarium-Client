@@ -1,0 +1,10 @@
+.error_code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    height: 80%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}

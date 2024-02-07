@@ -95,9 +95,11 @@ function Header() {
                                 <FaHeart />
                             </p>
                         </Link>
+                        <Link to="/cart">
                         <p href="#">
                             <FaShoppingCart />
                         </p>
+                        </Link>
                         <div id="login-btn">
                             <FaUser />
                         </div>

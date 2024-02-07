@@ -6,6 +6,7 @@ import Login from './Components/Login/Login'
 import Test from './Components/Test/Test'
 import Book from './Components/Book/Book'
 import Wishlist from './Components/Wishlist/Wishlist'
+import Error from './Components/Error/Error'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/test' element={<Test />} />
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path="/book/:id" element={<Book />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </>
   )

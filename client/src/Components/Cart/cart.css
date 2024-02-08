@@ -8,20 +8,18 @@ body {
 
 .w_container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: flex-start;
-    flex: 1 1;
     height: 35vh;
     margin-bottom: 0.5%;
 }
 
 .w_book_details {
-    flex: 1 1;
     display: flex;
     justify-content: space-around;
     border: black 0.1px solid;
     padding: 20px;
-    height: 40vh;
+    height: 38vh;
     margin-top: 0.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -33,7 +31,6 @@ body {
 }
 
 .w_book_info {
-    flex: 1;
     margin-left: 20px;
     display: flex;
     justify-content: center;
@@ -48,14 +45,14 @@ body {
 
 .w_author,
 .w_date {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 5px;
 }
 
 .w_description {
-    font-size: 18px;
+    font-size: 13px;
     line-height: 1.5;
-    margin-top: 10px;
+    margin-top: 10px
 }
 
 .w_actions {
@@ -66,5 +63,5 @@ body {
 }
 
 .w_price {
-    font-size: 20px;
+    font-size: 15px;
 }

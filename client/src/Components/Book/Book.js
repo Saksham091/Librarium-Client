@@ -7,6 +7,35 @@ function Book() {
   const { id } = useParams();
   const [bookDetails, setBookDetails] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [listNotification, setNotification] = useState(false);
+  const [addingToWishlist, setAddingToWishlist] = useState(false);
+  const email = sessionStorage.getItem('UserEmail')
+
+  const addToWishlist = async (bookDetails) => {
+    try {
+      setAddingToWishlist(true);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/wishlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          wishlist: bookDetails
+        }),
+      });
+      if (response.ok) {
+        setAddingToWishlist(false);
+        setNotification(true);
+      } else {
+        console.error('Error:', response.statusText);
+        setNotification(false);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setNotification(false);
+    }
+  };
 
   useEffect(() => {
     const fetchBookDetails = async () => {
@@ -15,11 +44,8 @@ function Book() {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }
-    
-        // Move this line after response.json() or remove it if not needed
-        // const text = await response.text();
         const json = await response.json();
-    
+
         if (json) {
           setBookDetails(json);
         } else {
@@ -60,7 +86,11 @@ function Book() {
                 <div className="actions">
                   <div className="price"> Price: Rs {bookDetails.price}</div>
                   <div className='cart_button'>
-                    <button className="a_btn">Add to Wishlist</button>
+                    <div className="wishlist_button">
+                      <button className="a_btn" onClick={() => { addToWishlist(bookDetails) }}>Add to Wishlist</button>
+                      {addingToWishlist && <p className='list_notification'>Adding to Wishlist...</p>}
+                      {listNotification && <p className='list_notification'>Item added to the list</p>}
+                    </div>
                     <button className="a_btn">Add to Cart</button>
                   </div>
                 </div>

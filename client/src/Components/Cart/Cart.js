@@ -8,7 +8,7 @@ function Cart() {
 
     useEffect(() => {
         const fetchCart = async () => {
-                fetch(`${process.env.REACT_APP_API_URL}/cart/all?email=${email}`)
+                fetch(`${process.env.REACT_APP_API_URL}cart/all?email=${email}`)
                 .then((data)=>data.json())
                 .then((res)=>{
                     console.log("res",res)

@@ -8,13 +8,15 @@ function Book() {
   const [bookDetails, setBookDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [listNotification, setNotification] = useState(false);
+  const [cartNotification, setCartNotification] = useState(false);
   const [addingToWishlist, setAddingToWishlist] = useState(false);
+  const [addingToCart, setAddingToCart] = useState(false);
   const email = sessionStorage.getItem('UserEmail')
 
   const addToWishlist = async (bookDetails) => {
     try {
       setAddingToWishlist(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}wishlist`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/wishlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,10 +39,36 @@ function Book() {
     }
   };
 
+  const addToCart = async (bookDetails) => {
+    try {
+      setAddingToCart(true);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/cart`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          cart: bookDetails
+        }),
+      });
+      if (response.ok) {
+        setAddingToCart(false);
+        setCartNotification(true);
+      } else {
+        console.error('Error:', response.statusText);
+        setCartNotification(false);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setCartNotification(false);
+    }
+  };
+
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}book/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/book/${id}`);
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }
@@ -85,13 +113,17 @@ function Book() {
                 <p className='description'>Description: <span dangerouslySetInnerHTML={{ __html: bookDetails.description }} /></p>
                 <div className="actions">
                   <div className="price"> Price: Rs {bookDetails.price}</div>
-                  <div className='cart_button'>
+                  <div className='item_button'>
                     <div className="wishlist_button">
                       <button className="a_btn" onClick={() => { addToWishlist(bookDetails) }}>Add to Wishlist</button>
                       {addingToWishlist && <p className='list_notification'>Adding to Wishlist...</p>}
                       {listNotification && <p className='list_notification'>Item added to the list</p>}
                     </div>
-                    <button className="a_btn">Add to Cart</button>
+                    <div className='cart_button'>
+                      <button className="a_btn" onClick={() => { addToCart(bookDetails) }}>Add to Cart</button>
+                      {addingToCart && <p className='cart_notification'>Adding to Cart...</p>}
+                      {cartNotification && <p className='list_notification'>Item added to the cart</p>}
+                    </div>
                   </div>
                 </div>
               </div>

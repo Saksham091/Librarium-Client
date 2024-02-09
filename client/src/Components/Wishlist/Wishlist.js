@@ -8,7 +8,7 @@ function Wishlist() {
 
     useEffect(() => {
         const fetchWishlist = async () => {
-                fetch(`${process.env.REACT_APP_API_URL}/wishlist/all?email=${email}`)
+                fetch(`${process.env.REACT_APP_API_URL}wishlist/all?email=${email}`)
                 .then((data)=>data.json())
                 .then((res)=>{
                     console.log("res",res)

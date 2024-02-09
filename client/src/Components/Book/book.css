@@ -26,6 +26,7 @@ body {
 .book_img {
     width: 25%;
     border-radius: 8px;
+    height: 75vh;
 }
 
 .book_info {
@@ -77,4 +78,17 @@ body {
     display: flex;
     gap: 12%;
     width: 28%;
+}
+
+.wishlist_button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list_notification{
+    color: black;
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: center;
 }

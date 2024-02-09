@@ -5,6 +5,7 @@ import { FaFacebookF, FaTwitter, FaUser, FaLock, FaGoogle, FaLinkedinIn, FaEnvel
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
+import { jwtDecode } from "jwt-decode";
 
 function Login() {
 
@@ -104,19 +105,26 @@ function Login() {
         // Sending Login data to the backend using fetch
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}auth/login`, {
+            await fetch(`${process.env.REACT_APP_API_URL}auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(login),
-            });
-            if (response.ok) {
-                setError(false);
-                navigate('/home');
-            } else {
+            })
+            .then((res)=>res.json())
+            .then((data)=>{
+                if(data){
+                    setError(false);
+                    const decoded=jwtDecode(data.token);
+                    sessionStorage.setItem('UserEmail',decoded.email)
+                    navigate('/home');
+                }
+            })
+            .catch((error)=>{
                 setError(true);
-            }
+                console.log(error)
+            })
         } catch (error) {
             console.error('Error:', error);
         }

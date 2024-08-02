@@ -18,7 +18,7 @@ function Cart() {
             order_id: data.id,
             handler: async (response) => {
                 try {
-                    const verifyUrl = `${process.env.REACT_APP_API_URL}/payment/verify`;
+                    const verifyUrl = `${process.env.REACT_APP_API_URL}payment/verify`;
                     const { data } = await axios.post(verifyUrl, response);
                     console.log(data);
                 } catch (error) {
@@ -35,7 +35,7 @@ function Cart() {
 
     const handlePayment = async () => {
         try {
-            const orderUrl = `${process.env.REACT_APP_API_URL}/payment/orders`;
+            const orderUrl = `${process.env.REACT_APP_API_URL}payment/orders`;
             const { data } = await axios.post(orderUrl, { amount: totalPrice });
             console.log(data);
             initPayment(data.data);
@@ -46,7 +46,7 @@ function Cart() {
 
     useEffect(() => {
         const fetchCart = async () => {
-            fetch(`${process.env.REACT_APP_API_URL}/cart/all?email=${email}`)
+            fetch(`${process.env.REACT_APP_API_URL}cart/all?email=${email}`)
                 .then((data) => data.json())
                 .then((res) => {
                     console.log("res", res)

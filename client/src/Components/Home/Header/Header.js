@@ -16,7 +16,7 @@ function Header() {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/book/search?q=${value}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}book/search?q=${value}`);
             const data = await response.json();
 
             if (data) {
@@ -54,7 +54,6 @@ function Header() {
                                 placeholder="Search for books..."
                                 id="search-box"
                                 onFocus={() => setIsActive(true)}
-                            // onBlur={() => setIsActive(false)}
                             />
                             <label htmlFor="search-box">
                                 <FaSearch />

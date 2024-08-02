@@ -16,7 +16,7 @@ function Book() {
   const addToWishlist = async (bookDetails) => {
     try {
       setAddingToWishlist(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}wishlist`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/wishlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ function Book() {
   const addToCart = async (bookDetails) => {
     try {
       setAddingToCart(true);
-      const response = await fetch(`${process.env.REACT_APP_API_URL}cart`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/cart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ function Book() {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}book/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/book/${id}`);
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }

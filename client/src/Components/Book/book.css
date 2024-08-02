@@ -1,109 +1,42 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --red:#B21807;
+    /* #F95700FF */
+    --dark-color:#a11303;
+    --black:#444;
+    --light-color:#666;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    height: 75vh;
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+    transition:width none;
 }
 
-.book_details {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    height: 85vh;
-    margin-top: 0.5%;
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
 }
 
-.book_img {
-    width: 25%;
-    border-radius: 8px;
-    height: 75vh;
+html::-webkit-scrollbar{
+    width:1rem;
 }
 
-.book_info {
-    flex: 1;
-    margin-left: 20px;
+html::-webkit-scrollbar-track{
+    background:transparent;
 }
 
-.book_name {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.author,
-.date {
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.description {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-top: 10px;
-}
-
-.actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.a_btn {
-    padding: 10px;
-    background-color: #232f3e;
-    border-radius: 4px;
-    width: 150px;
-    height: 49px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-.price {
-    font-size: 20px;
-}
-
-.item_button {
-    display: flex;
-    gap: 12%;
-    width: 28%;
-    margin-right: 5%;
-    margin-top: 2%;
-}
-
-.wishlist_button{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.list_notification{
-    color: black;
-    font-size: 15px;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.cart_button{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cart_notification{
-    color: black;
-    font-size: 15px;
-    margin-bottom: 5px;
-    text-align: center;
+html::-webkit-scrollbar-thumb{
+    background:var(--black);
 }

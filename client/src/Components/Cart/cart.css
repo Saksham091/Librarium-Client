@@ -19,7 +19,7 @@ body {
     justify-content: space-around;
     border: black 0.1px solid;
     padding: 20px;
-    height: 38vh;
+    height: 50vh;
     margin-top: 0.5%;
     margin-left: 0.5%;
     margin-right: 0.5%;
@@ -46,13 +46,19 @@ body {
 .c_author,
 .c_date {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .c_description {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5;
     margin-top: 10px
+}
+
+.c_button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .c_actions {
@@ -63,5 +69,17 @@ body {
 }
 
 .c_price {
-    font-size: 15px;
+    font-size: 18px;
+}
+
+.c_pay_button {
+    padding: 10px;
+    background-color: #232f3e;
+    border-radius: 4px;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 10px 0;
 }

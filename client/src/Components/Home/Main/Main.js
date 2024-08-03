@@ -6,7 +6,7 @@ import book_4 from '../../../assets/book_4.png'
 import book_5 from '../../../assets/book_5.png'
 import book_6 from '../../../assets/book_6.png'
 import stand from '../../../assets/stand.png'
-import {FaShippingFast, FaLock, FaRedoAlt, FaHeadset} from 'react-icons/fa'
+import { FaShippingFast, FaLock, FaRedoAlt, FaHeadset } from 'react-icons/fa'
 
 function Main() {
 
@@ -17,10 +17,12 @@ function Main() {
         <div class="row">
 
           <div class="content">
-            <h3>upto 75% off</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
-            <a href="#" class="btn">shop now</a>
+            <h3>Up to 75% Off</h3>
+            <p>Find your next favorite book at a great price! We've got amazing discounts don't miss these limited-time offers—grab all your favorite books!</p>
+            <a href="#" class="btn">Shop Now</a>
           </div>
+
+
 
           <div class="books-slider">
             <div class="wrapper">
@@ -41,7 +43,7 @@ function Main() {
       <section class="icons-container">
 
         <div class="icons">
-          <i> <FaShippingFast/> </i>
+          <i> <FaShippingFast /> </i>
           <div class="content">
             <h3>Free Shipping</h3>
             <p>All Over The World</p>

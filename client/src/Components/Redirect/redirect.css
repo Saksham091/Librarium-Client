@@ -1,0 +1,43 @@
+.redirect-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+}
+
+.redirect-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.redirect-container p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+@media (min-width: 768px) {
+    .redirect-container h2 {
+        font-size: 4rem;
+    }
+
+    .redirect-container p {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .redirect-container h2 {
+        font-size: 5rem;
+    }
+
+    .redirect-container p {
+        font-size: 2.5rem;
+    }
+}

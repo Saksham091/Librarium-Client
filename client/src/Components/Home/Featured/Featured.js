@@ -58,7 +58,7 @@ function Featured() {
                   <img src={book_1} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>The Art City</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -75,7 +75,7 @@ function Featured() {
                   <img src={book_2} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Give Thanks Inn Evertime Happpy</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -92,7 +92,7 @@ function Featured() {
                   <img src={book_3} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Your Name</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -109,7 +109,7 @@ function Featured() {
                   <img src={book_4} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Harmony in Diversity</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -126,7 +126,7 @@ function Featured() {
                   <img src={book_5} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>The Art of Musical Instruments</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -143,7 +143,7 @@ function Featured() {
                   <img src={book_6} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Secrets of the Forbidden Jungle</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -160,7 +160,7 @@ function Featured() {
                   <img src={book_7} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>The Guiding Star</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -177,7 +177,7 @@ function Featured() {
                   <img src={book_8} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Foundations of Historical Studies</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -194,7 +194,7 @@ function Featured() {
                   <img src={book_9} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>A Journey Through Love</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>
@@ -211,7 +211,7 @@ function Featured() {
                   <img src={book_10} alt="book" />
                 </div>
                 <div class="content">
-                  <h3>featured books</h3>
+                  <h3>Retro Insights: A Journey Through the Past</h3>
                   <div class="price">$15.99 <span>$20.99</span></div>
                   <a href="#" class="btn">add to cart</a>
                 </div>

@@ -12,21 +12,15 @@ function Newsletter() {
     e.preventDefault();
     setUpdate('Please wait while we are sending you request')
 
-    // Your EmailJs details
-
     const serviceId = 'service_5065rji'
     const templateId = 'template_vhss2p8'
     const publicKey = 'm8eBEU9tkAuFnVAe0'
-
-    // Object That Contains Dynamic Template
 
     const templateParams = {
       to_name: name,
       to_email: email,
       from_name: 'Librarium'
     }
-
-    // Sending Email Using EmailJs
 
     emailjs.send(serviceId, templateId, templateParams, publicKey)
       .then((resposne) => {

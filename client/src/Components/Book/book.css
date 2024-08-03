@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex: 1;
-    height: 75vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .book_details {
@@ -19,14 +20,18 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    height: 85vh;
+    height: auto;
     margin-top: 0.5%;
+    flex-direction: column;
 }
 
 .book_img {
-    width: 25%;
+    width: 100%;
+    max-width: 400px;
     border-radius: 8px;
-    height: 75vh;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
 }
 
 .book_info {
@@ -56,6 +61,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .a_btn {
@@ -77,33 +83,157 @@ body {
 .item_button {
     display: flex;
     gap: 12%;
-    width: 28%;
-    margin-right: 5%;
+    width: 100%;
     margin-top: 2%;
 }
 
-.wishlist_button{
+.wishlist_button, .cart_button {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.list_notification{
+.list_notification, .cart_notification {
     color: black;
     font-size: 15px;
     margin-bottom: 5px;
     text-align: center;
 }
 
-.cart_button{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Media Queries for Responsiveness */
+@media (min-width: 1024px) {
+    .container {
+        height: 75vh;
+    }
+
+    .book_details {
+        flex-direction: row;
+    }
+
+    .book_img {
+        width: 25%;
+        height: auto;
+    }
+
+    .book_info {
+        margin-left: 20px;
+    }
+
+    .item_button {
+        width: 28%;
+        margin-right: 5%;
+    }
 }
 
-.cart_notification{
-    color: black;
-    font-size: 15px;
-    margin-bottom: 5px;
-    text-align: center;
+@media (max-width: 1023px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book_details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book_img {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .book_info {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .a_btn {
+        width: 100%;
+    }
+
+    .item_button {
+        gap: 10%;
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 912px) {
+    .book_name {
+        font-size: 22px;
+    }
+
+    .author,
+    .date,
+    .price {
+        font-size: 15px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .item_button {
+        flex-direction: column;
+        width: 100%;
+        gap: 8%;
+    }
+
+    .a_btn {
+        height: 45px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .book_img {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .book_info {
+        text-align: left;
+    }
+
+    .a_btn {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book_name {
+        font-size: 20px;
+    }
+
+    .author,
+    .date,
+    .price {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .item_button {
+        flex-direction: column;
+        width: 100%;
+        gap: 5%;
+    }
+
+    .a_btn {
+        height: 35px;
+        font-size: 12px;
+    }
 }

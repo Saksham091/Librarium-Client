@@ -40,9 +40,9 @@ function Footer() {
 
           <div class="box">
             <h3>Contact Info</h3>
-            <a href="#"> <i> <FaPhone /> </i> +123-456-7890 </a>
-            <a href="#"> <i> <FaPhone /> </i> +111-222-3333 </a>
-            <a href="#"> <i> <FaEnvelope /> </i> shaikhanas@gmail.com </a>
+            <a href="#"> <i> <FaPhone /> </i> +91 95577 93557</a>
+            <a href="#"> <i> <FaPhone /> </i> +91 70872 32153</a>
+            <a href="#"> <i> <FaEnvelope /> </i> krishnaagrwal4@gmail.com </a>
             <img src={world_map} class="map" alt="map"/>
           </div>
 

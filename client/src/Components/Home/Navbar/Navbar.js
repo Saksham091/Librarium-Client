@@ -1,20 +1,19 @@
-import './navbar.css'
-import {FaHome, FaList, FaTags, FaComments, FaBlog} from 'react-icons/fa'
+import './navbar.css';
+import { FaHome, FaList, FaTags, FaComments, FaBlog } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function App() {
-
   return (
     <>
-      <nav class="bottom-navbar">
-        <a href="#home"> <FaHome /> </a>
-        <a href="#featured"> <FaList /> </a>
-        <a href="#arrivals"> <FaTags /> </a>
-        <a href="#reviews"> <FaComments /> </a>
-        <a href="#blogs"> <FaBlog /> </a>
+      <nav className="bottom-navbar">
+        <Link to="/home#home"> <FaHome /> </Link>
+        <Link to="/home#featured"> <FaList /> </Link>
+        <Link to="/home#arrivals"> <FaTags /> </Link>
+        <Link to="/home#reviews"> <FaComments /> </Link>
+        <Link to="/home#blogs"> <FaBlog /> </Link>
       </nav>
     </>
-  )
-
+  );
 }
 
 export default App;

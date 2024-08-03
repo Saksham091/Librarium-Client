@@ -8,11 +8,12 @@ function Deal() {
       <section class="deal">
 
         <div class="content">
-          <h3>deal of the day</h3>
-          <h1>upto 50% off</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora quaerat at fuga dolorum natus velit.</p>
-          <a href="#" class="btn">shop now</a>
+          <h3>Deal of the Day</h3>
+          <h1>Up to 50% Off</h1>
+          <p>Today's special deal: save up to 50% on a fantastic selection of books! Hurry and grab your books while the deal lasts!</p>
+          <a href="#" class="btn">Shop Now</a>
         </div>
+
 
         <div class="image">
           <img src={deal} alt="deal" />

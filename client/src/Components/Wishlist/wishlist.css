@@ -10,28 +10,30 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 35vh;
     margin-bottom: 0.5%;
+    padding-top: 60px;
 }
 
 .w_book_details {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     border: black 0.1px solid;
     padding: 20px;
-    height: 50vh;
-    margin-top: 0.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
+    margin: 0.5%;
 }
 
 .w_book_img {
-    width: 15%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 8px;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .w_book_info {
-    margin-left: 20px;
+    margin-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +54,7 @@ body {
 .w_description {
     font-size: 16px;
     line-height: 1.5;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .w_actions {
@@ -64,4 +66,45 @@ body {
 
 .w_price {
     font-size: 18px;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .w_book_details {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .w_book_img {
+        width: auto;
+        max-width: 300px;
+        margin-bottom: 0;
+    }
+
+    .w_book_info {
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .w_book_details {
+        padding: 40px;
+    }
+
+    .w_book_name {
+        font-size: 28px;
+    }
+
+    .w_author,
+    .w_date {
+        font-size: 20px;
+    }
+
+    .w_description {
+        font-size: 18px;
+    }
+
+    .w_price {
+        font-size: 20px;
+    }
 }

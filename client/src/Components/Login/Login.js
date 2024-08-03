@@ -24,9 +24,6 @@ function Login() {
         document.querySelector(".container_login").classList.remove("sign-up-mode");
     };
 
-    //  Storing Value To A Variable
-
-
     const signupIntitialValues = {
         firstName: '',
         lastName: '',
@@ -58,10 +55,9 @@ function Login() {
 
     const signupUser = async (e) => {
         e.preventDefault();
-        // Sending Singup data to the backend using fetch
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}auth/signup`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +67,6 @@ function Login() {
             if (response.ok) {
                 setError(false)
                 setUpdate('Please wait while we are signing you up')
-                // Sending Login Confirmation Email
                 const serviceId = 'service_5065rji'
                 const templateId = 'template_nlst6zv'
                 const publicKey = 'm8eBEU9tkAuFnVAe0'
@@ -102,10 +97,9 @@ function Login() {
 
     const loginUser = async (e) => {
         e.preventDefault();
-        // Sending Login data to the backend using fetch
 
         try {
-            await fetch(`${process.env.REACT_APP_API_URL}auth/login`, {
+            await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -209,8 +203,7 @@ function Login() {
                         <div class="content">
                             <h3>New here ?</h3>
                             <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-                                ex ratione. Aliquid!
+                                Click here to make your profile
                             </p>
                             <button class="button transparent" id="sign-up-btn" onClick={signUp}>
                                 Sign up
@@ -222,8 +215,7 @@ function Login() {
                         <div class="content">
                             <h3>One of us ?</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                                laboriosam ad deleniti.
+                                Click here to login and explore the world full of books 
                             </p>
                             <button class="button transparent" id="sign-in-btn" onClick={signIn}>
                                 Sign in

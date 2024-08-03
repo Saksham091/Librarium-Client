@@ -57,7 +57,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/signup`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}auth/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+            await fetch(`${process.env.REACT_APP_API_URL}auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

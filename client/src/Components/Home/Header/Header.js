@@ -17,7 +17,7 @@ function Header() {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/book/search?q=${value}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}book/search?q=${value}`);
             const data = await response.json();
 
             if (data) {

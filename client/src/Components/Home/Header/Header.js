@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaBook, FaSearch, FaHeart, FaShoppingCart, FaUser } from 'react-icons/fa';
 import './header.css';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,8 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 function Header() {
     const [input, setInput] = useState("");
     const [searchResults, setSearchResults] = useState([]);
-    const [isActive, setIsActive] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isActive, setIsActive] = useState(false);
+    const searchRef = useRef(null);
     const navigate = useNavigate();
 
     const fetchData = async (value) => {
@@ -17,7 +18,7 @@ function Header() {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}book/search?q=${value}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/book/search?q=${value}`);
             const data = await response.json();
 
             if (data) {
@@ -40,6 +41,20 @@ function Header() {
         navigate('/');
     };
 
+    const handleClickOutside = (e) => {
+        if (searchRef.current && !searchRef.current.contains(e.target)) {
+            setIsActive(false);
+        }
+    };
+
+    // Close the search results if clicked outside
+    React.useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
         <header className="header">
             <div className="header-1">
@@ -47,7 +62,7 @@ function Header() {
                     <span><FaBook /></span> Librarium
                 </Link>
 
-                <div className='search'>
+                <div className='search' ref={searchRef}>
                     <form action="" className="search-form">
                         <input
                             type="search"
@@ -56,7 +71,6 @@ function Header() {
                             placeholder="Search for books..."
                             id="search-box"
                             onFocus={() => setIsActive(true)}
-                            onBlur={() => setIsActive(false)}
                         />
                         <label htmlFor="search-box">
                             <FaSearch />

@@ -10,6 +10,7 @@ function Header() {
     const [isActive, setIsActive] = useState(false);
     const searchRef = useRef(null);
     const navigate = useNavigate();
+    const token = sessionStorage.getItem('userId');
 
     const fetchData = async (value) => {
         if (!value.trim()) {
@@ -18,7 +19,15 @@ function Header() {
         }
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}book/search?q=${value}`);
+            const response = await fetch(`${process.env.REACT_APP_API_URL}book/search?q=${value}`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'authorization': `Bearer ${token}`,
+                    },
+                }
+            );
             const data = await response.json();
 
             if (data) {

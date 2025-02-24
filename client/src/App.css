@@ -29,14 +29,11 @@ html{
     scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar{
-    width:1rem;
+html::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
-html::-webkit-scrollbar-track{
-    background:transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background:var(--black);
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--black), #555);
+    border-radius: 10px;
 }

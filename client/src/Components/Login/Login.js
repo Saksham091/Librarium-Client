@@ -5,7 +5,6 @@ import { FaFacebookF, FaTwitter, FaUser, FaLock, FaGoogle, FaLinkedinIn, FaEnvel
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import emailjs from '@emailjs/browser'
-import { jwtDecode } from "jwt-decode";
 
 function Login() {
 
@@ -79,11 +78,12 @@ function Login() {
                 emailjs.send(serviceId, templateId, templateParams, publicKey)
                     .then((resposne) => {
                         console.log('Email sent successfully!', resposne)
+                        sessionStorage.setItem('userId', response.token)
                         setError(false);
-                        window.location.reload();
+                        navigate('/home');
                     })
                     .catch((error) => {
-                        console.error('Error Sending Email', signup.email)
+                        console.error('Error Sending Email', signup.email, error)
                     })
             } else {
                 setError(true);
@@ -106,24 +106,22 @@ function Login() {
                 },
                 body: JSON.stringify(login),
             })
-            .then((res)=>res.json())
-            .then((data)=>{
-                if(data){
-                    setError(false);
-                    const decoded=jwtDecode(data.token);
-                    sessionStorage.setItem('UserEmail',decoded.email)
-                    navigate('/home');
-                }
-            })
-            .catch((error)=>{
-                setError(true);
-                console.log(error)
-            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data) {
+                        setError(false);
+                        sessionStorage.setItem('userId', response.token)
+                        navigate('/home');
+                    }
+                })
+                .catch((error) => {
+                    setError(true);
+                    console.log(error)
+                })
         } catch (error) {
             console.error('Error:', error);
         }
     }
-
 
     return (
         <>
@@ -215,7 +213,7 @@ function Login() {
                         <div class="content">
                             <h3>One of us ?</h3>
                             <p>
-                                Click here to login and explore the world full of books 
+                                Click here to login and explore the world full of books
                             </p>
                             <button class="button transparent" id="sign-in-btn" onClick={signIn}>
                                 Sign in

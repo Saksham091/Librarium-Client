@@ -12,7 +12,7 @@ function Book() {
   const [cartNotification, setCartNotification] = useState(false);
   const [addingToWishlist, setAddingToWishlist] = useState(false);
   const [addingToCart, setAddingToCart] = useState(false);
-  const email = sessionStorage.getItem('UserEmail')
+  const token = sessionStorage.getItem('userId')
 
   const addToWishlist = async (bookDetails) => {
     try {
@@ -21,9 +21,9 @@ function Book() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          email: email,
           wishlist: bookDetails
         }),
       });
@@ -47,9 +47,9 @@ function Book() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          email: email,
           cart: bookDetails
         }),
       });
@@ -69,7 +69,13 @@ function Book() {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}book/${id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}book/${id}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            'authorization': `Bearer ${token}`,
+          },
+        });
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }

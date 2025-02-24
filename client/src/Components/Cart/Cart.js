@@ -7,7 +7,7 @@ import './cart.css';
 function Cart() {
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const email = sessionStorage.getItem('UserEmail')
+    const token = sessionStorage.getItem('userId')
 
     const initPayment = (data) => {
         const options = {
@@ -47,11 +47,16 @@ function Cart() {
 
     useEffect(() => {
         const fetchCart = async () => {
-            fetch(`${process.env.REACT_APP_API_URL}cart/all?email=${email}`)
+            fetch(`${process.env.REACT_APP_API_URL}cart/all`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${token}`, 
+                },
+            })
                 .then((data) => data.json())
                 .then((res) => {
-                    console.log("res", res)
-                    if (res) {
+                     if (res) {
                         setCart(res.cart)
                         const totalPrice = res.cart.reduce((total, book) => total + Number(book.price), 0)
                         setTotalPrice(totalPrice);

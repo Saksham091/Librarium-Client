@@ -5,19 +5,23 @@ import './wishlist.css';
 
 function Wishlist() {
     const [wishlist, setWishlist] = useState([]);
-    const email = sessionStorage.getItem('UserEmail')
+    const token = sessionStorage.getItem('userId')
 
     useEffect(() => {
         const fetchWishlist = async () => {
-            fetch(`${process.env.REACT_APP_API_URL}wishlist/all?email=${email}`)
+            fetch(`${process.env.REACT_APP_API_URL}wishlist/all`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${token}`,
+                },
+            })
                 .then((data) => data.json())
                 .then((res) => {
                     console.log("res", res)
                     if (res) {
                         setWishlist(res.wishlist)
-                        console.log("wishlist", wishlist)
                     }
-
                 })
                 .catch((error) => console.log(error))
         };

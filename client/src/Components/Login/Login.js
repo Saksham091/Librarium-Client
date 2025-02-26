@@ -42,12 +42,10 @@ function Login() {
 
     const onInputChange = (e) => {
         setSignup({ ...signup, [e.target.name]: e.target.value });
-        console.log(signup);
     }
 
     const onValueChange = (e) => {
         setLogin({ ...login, [e.target.name]: e.target.value });
-        console.log(login);
     }
 
     // Sign Up Function

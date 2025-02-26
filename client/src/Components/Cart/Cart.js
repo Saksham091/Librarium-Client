@@ -2,12 +2,21 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Header from '../Home/Header/Header';
 import Navbar from '../Home/Navbar/Navbar';
+import { FaTrash } from "react-icons/fa";
 import './cart.css';
 
 function Cart() {
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const token = sessionStorage.getItem('userId')
+
+    function add3Dots(string, limit) {
+        const words = string.split(' ');
+        if (words.length > limit) {
+            return words.slice(0, limit).join(' ') + '...';
+        }
+        return string;
+    }
 
     const initPayment = (data) => {
         const options = {
@@ -36,39 +45,56 @@ function Cart() {
 
     const handlePayment = async () => {
         try {
-            const orderUrl = `${process.env.REACT_APP_API_URL}/payment/orders`;
+            const orderUrl = `${process.env.REACT_APP_API_URL}payment/orders`;
             const { data } = await axios.post(orderUrl, { amount: totalPrice });
-            console.log(data);
             initPayment(data.data);
         } catch (error) {
             console.log(error);
         }
     };
 
+    const fetchCart = async () => {
+        fetch(`${process.env.REACT_APP_API_URL}cart/all`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`, 
+            },
+        })
+            .then((data) => data.json())
+            .then((res) => {
+                 if (res) {
+                    setCart(res.cart)
+                    const totalPrice = res.cart.reduce((total, book) => total + Number(book.price), 0)
+                    setTotalPrice(totalPrice);
+                }
+            })
+            .catch((error) => console.log(error))
+    };
     useEffect(() => {
-        const fetchCart = async () => {
-            fetch(`${process.env.REACT_APP_API_URL}cart/all`, {
-                method: 'GET',
+        fetchCart();
+    }, []);
+
+    function handleDelete(_id) {
+            fetch(`${process.env.REACT_APP_API_URL}cart/delete/${_id}`, {
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
-                    'authorization': `Bearer ${token}`, 
+                    'authorization': `Bearer ${token}`,
                 },
             })
                 .then((data) => data.json())
                 .then((res) => {
-                     if (res) {
-                        setCart(res.cart)
-                        const totalPrice = res.cart.reduce((total, book) => total + Number(book.price), 0)
-                        setTotalPrice(totalPrice);
-                        console.log("cart", cart)
+                    console.log("res", res)
+                    if (res) {
+                        fetchCart();
                     }
-
                 })
                 .catch((error) => console.log(error))
-        };
-        fetchCart();
-    }, []);
-
+        }
+        useEffect(() => {
+            fetchCart();
+        }, []);
 
     return (
         <>
@@ -80,11 +106,12 @@ function Cart() {
                             cart.map((data) => {
                                 return (
                                     <div className='c_book_details'>
+                                        <button onClick={()=>handleDelete(data._id)} className='c_delete'><FaTrash /></button>
                                         <img src={data.image} alt="Book Cover" className='c_book_img' />
                                         <div className='c_book_info'>
                                             <h2 className='c_book_name'>{data.name}</h2>
                                             <p className='c_author'>Author: {data.author}</p>
-                                            <p className='c_description'>Description:{data.description}</p>
+                                            <p className='w_description'>Description:{add3Dots(data.description,140)}</p>
                                             <div className="c_actions">
                                                 <div className="c_price"> Price: Rs {data.price}</div>
                                             </div>

@@ -6,7 +6,7 @@ import Book from './Components/Book/Book'
 import Wishlist from './Components/Wishlist/Wishlist'
 import Error from './Components/Error/Error'
 import Cart from './Components/Cart/Cart'
-import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
+import { TokenRoute } from './Components/TokenRoute/TokenRoute'
 import RedirectToLogin from './Components/Redirect/Redirect'
 
 function App() {
@@ -14,10 +14,12 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/home' element={<PrivateRoute><Home /></PrivateRoute>} />
-        <Route path='/wishlist' element={<PrivateRoute><Wishlist /></PrivateRoute>} />
-        <Route path='/book/:id' element={<PrivateRoute><Book /></PrivateRoute>} />
-        <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />
+        <Route element={<TokenRoute />}>
+          <Route path='/home' element={<Home />} />
+          <Route path='/wishlist' element={<Wishlist />} />
+          <Route path='/book/:id' element={<Book />} />
+          <Route path='/cart' element={<Cart />} />
+        </Route>
         <Route path='/redirect' element={<RedirectToLogin />} />
         <Route path='*' element={<Error />} />
       </Routes>

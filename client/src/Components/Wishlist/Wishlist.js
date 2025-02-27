@@ -26,7 +26,6 @@ function Wishlist() {
         })
             .then((data) => data.json())
             .then((res) => {
-                console.log("res", res)
                 if (res) {
                     setWishlist(res.wishlist)
                 }

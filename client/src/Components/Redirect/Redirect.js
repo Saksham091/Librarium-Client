@@ -15,7 +15,7 @@ const RedirectToLogin = () => {
 
     return (
         <div className="redirect-container">
-            <h2>Please login first</h2>
+            <h2>Your Session Expired Please Login </h2>
             <p>Redirecting to the login page...</p>
         </div>
     );

@@ -18,6 +18,24 @@ function Cart() {
         return string;
     }
 
+    function clearCart(){
+        fetch(`${process.env.REACT_APP_API_URL}cart/delete`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`,
+            },
+        })
+            .then((data) => data.json())
+            .then((res) => {
+                console.log("res", res)
+                if (res) {
+                    fetchCart();
+                }
+            })
+            .catch((error) => console.log(error))
+    }
+
     const initPayment = (data) => {
         const options = {
             key: process.env.KEY_ID,
@@ -31,6 +49,11 @@ function Cart() {
                     const verifyUrl = `${process.env.REACT_APP_API_URL}payment/verify`;
                     const { data } = await axios.post(verifyUrl, response);
                     console.log(data);
+                    if (data.message === "Payment verified successfully") {
+                        clearCart();
+                    } else {
+                        console.log("Payment Failed");
+                    }
                 } catch (error) {
                     console.log(error);
                 }

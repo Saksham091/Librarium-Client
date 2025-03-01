@@ -1,14 +1,33 @@
 import './main.css'
-import book_1 from '../../../assets/book_1.png'
-import book_2 from '../../../assets/book_2.png'
-import book_3 from '../../../assets/book_3.png'
-import book_4 from '../../../assets/book_4.png'
-import book_5 from '../../../assets/book_5.png'
-import book_6 from '../../../assets/book_6.png'
 import stand from '../../../assets/stand.png'
 import { FaShippingFast, FaLock, FaRedoAlt, FaHeadset } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Main() {
+
+  const [book, setBook] = useState([]);
+  const token = sessionStorage.getItem('userId')
+
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}book/display?limit=6`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          'authorization': `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      setBook(data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+
+  useEffect(() => {
+    fetchBooks();
+  }, [])
 
   return (
     <>
@@ -17,7 +36,7 @@ function Main() {
         <div class="row">
 
           <div class="content">
-            <h3>Up to 75% Off</h3>
+            <h3>Welcome To Librarium</h3>
             <p>Find your next favorite book at a great price! We've got amazing discounts don't miss these limited-time offers—grab all your favorite books!</p>
             <a href="#" class="btn">Shop Now</a>
           </div>
@@ -26,12 +45,15 @@ function Main() {
 
           <div class="books-slider">
             <div class="wrapper">
-              <a href="#" class=""><img src={book_1} alt="book" /></a>
-              <a href="#" class=""><img src={book_2} alt="book" /></a>
-              <a href="#" class=""><img src={book_3} alt="book" /></a>
-              <a href="#" class=""><img src={book_4} alt="book" /></a>
-              <a href="#" class=""><img src={book_5} alt="book" /></a>
-              <a href="#" class=""><img src={book_6} alt="book" /></a>
+              {
+                book.map((book) => {
+                  return (
+                    <Link to={`/book/${book._id}`} class="">
+                      <img src={book.image} alt="book" />
+                    </Link>
+                  )
+                })
+              }
             </div>
             <img src={stand} class="stand" alt="stand" />
           </div>

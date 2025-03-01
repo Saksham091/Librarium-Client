@@ -1,51 +1,55 @@
-🚀 Live Demo
-Check out the deployed version of the app: 🔗 [Librarium]([url](https://librarium081.vercel.app/))
+# Librarium
+This is a React project created with  `npx create-react-app client`.
 
-📌 Features
-🏠 Homepage
-- Displays a vast collection of books.
-- Includes a search bar and filtering options to find books by title.
-- Styled using CSS for a modern and responsive UI.
+## 🚀 Live Demo
+Check out the deployed version of the app: 🔗 **[Librarium](https://librarium081.vercel.app/)**
 
-📖 Book Detail Page
-- Clicking on a book navigates to a detailed page.
-- Displays book cover, summary and author.
-- Users can preview book summaries and make informed purchase decisions.
-- Users can add books to their wishlist or cart.
+## 📌 Features
 
-🛍️ Secure Checkout
-- Ensures a smooth and secure transaction process.
-- Offers multiple payment options for convenience.
+### 🏠 Homepage
+* Displays a vast collection of books.
+* Includes a search bar and filtering options to find books by title.
+* Styled using CSS for a modern and responsive UI.
 
-📚 User Accounts & Wishlist
-- Create an account to track orders and receive personalized book recommendations.
-- Wishlist functionality allows users to save favorite books for future purchases.
+### 📖 Book Detail Page
+* Clicking on a book navigates to a detailed page.
+* Displays book cover, summary and author.
+* Users can preview book summaries and make informed purchase decisions.
+* Users can add books to their wishlist or cart.
 
-📱 Responsive Design
-- Optimized for various devices, including smartphones, tablets, and desktops.
+### 🛍️ Secure Checkout
+* Ensures a smooth and secure transaction process.
+* Offers multiple payment options for convenience.
 
-⚡ Performance Optimizations
-- Efficient API calls to fetch book data seamlessly.
+### 📚 User Accounts & Wishlist
+* Create an account to track orders and receive personalized book recommendations.
+* Wishlist functionality allows users to save favorite books for future purchases.
 
-🛠️ Installation & Setup
+### 📱 Responsive Design
+* Optimized for various devices, including smartphones, tablets, and desktops.
 
-Note: The project won't work without an .env file, which isn't available in the code.
-1. Clone the Repository
+### ⚡ Performance Optimizations
+* Efficient API calls to fetch book data seamlessly.
+
+## 🛠️ Installation & Setup
+
+### Note: The project won't work without an .env file, which isn't available in the code.
+**1. Clone the Repository**
    ```bash
    git clone https://github.com/Saksham091/Librarium-Client
    cd client
    ```
-2. Install Dependencies
+**2. Install Dependencies**
    ```bash
    npm install
    ```
-3. Run the Development Server
+**3. Run the Development Server**
    ```bash
    npm start
    ```
-   Open http://localhost:3000 in your browser to see the app.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-🎯 Technologies Used
+## 🎯 Technologies Used
 - React (Frontend framework)
 - React Router (Navigation)
 - CSS (For styling)
@@ -53,7 +57,7 @@ Note: The project won't work without an .env file, which isn't available in the 
 - Node.js & Express (Backend)
 - MongoDB (Database)
 
-🔗 Backend Repository
+## 🔗 Backend Repository
 The backend for Librarium is available here: [Librarium Backend Repository](https://github.com/Saksham091/Librarium-Server)
 
 Enjoy exploring the world of books with Librarium! If you have any questions or feedback, feel free to open an issue or contribute to the project. 😊

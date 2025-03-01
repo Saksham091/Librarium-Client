@@ -50,15 +50,15 @@ Check out the deployed version of the app: 🔗 **[Librarium](https://librarium0
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
 ## 🎯 Technologies Used
-- React (Frontend framework)
-- React Router (Navigation)
-- CSS (For styling)
-- Custom Book API (Self-hosted data source)
-- Node.js & Express (Backend)
-- MongoDB (Database)
+* React (Frontend framework)
+* React Router (Navigation)
+* CSS (For styling)
+* Custom Book API (Self-hosted data source)
+* Node.js & Express (Backend)
+* MongoDB (Database)
 
 ## 🔗 Backend Repository
 The backend for Librarium is available here: [Librarium Backend Repository](https://github.com/Saksham091/Librarium-Server)
 
-Enjoy exploring the world of books with Librarium! If you have any questions or feedback, feel free to open an issue or contribute to the project. 😊
+Enjoy exploring the world of books with Librarium!. 😊
 

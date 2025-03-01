@@ -10,7 +10,7 @@ function Newsletter() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUpdate('Please wait while we are sending you request')
+    setUpdate('Please Wait While We Confirm Your Subscription')
 
     const serviceId = 'service_5065rji'
     const templateId = 'template_vhss2p8'
@@ -30,7 +30,8 @@ function Newsletter() {
         setEmail('')
       })
       .catch((error) => {
-        console.error('Error Sending Email', email)
+        setUpdate("Sorry We Couldn't Find Your Email")
+        console.error('Error Sending Email', email, error)
       })
   }
 
@@ -38,10 +39,10 @@ function Newsletter() {
     <>
       <section class="newsletter">
         <form onSubmit={(e) => handleSubmit(e)}>
-          <h3>subscribe for latest updates</h3>
+          <h3>Subscribe For Latest Updates</h3>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Your Name" class="box" />
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" class="box" />
-          <button type="submit" class="btn"> subscribe </button>
+          <button type="submit" class="btn"> Subscribe </button>
           <p className='update'>{update}</p>
         </form>
       </section>

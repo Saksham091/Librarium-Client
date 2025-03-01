@@ -37,7 +37,7 @@ function Featured() {
     <>
       <section class="featured" id="featured">
 
-        <h1 class="heading"> <span>featured books</span> </h1>
+        <h1 class="heading"> <span>Featured Books</span> </h1>
 
         <div className="container swiper featured-slider">
           <Swiper
@@ -69,8 +69,7 @@ function Featured() {
                   <SwiperSlide className='slideswiper'>
                     <div class="swiper-slide box">
                       <div class="icons">
-                        <a href="#" class="fas fa-heart"> <FaHeart /> </a>
-                        <a href="#" class="fas fa-eye"> <FaEye /> </a>
+                        <Link to={"/wishlist"} className='a_heart'> <FaHeart /> </Link>
                       </div>
                       <div class="image">
                         <Link to={`/book/${book._id}`} class="">
@@ -78,9 +77,9 @@ function Featured() {
                         </Link>
                       </div>
                       <div class="content">
-                        <h3>Give Thanks Inn Evertime Happpy</h3>
-                        <div class="price">$15.99 <span>$20.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <h3>{book.name}</h3>
+                        <div class="price"><span> Rs {parseInt(book.price) + parseInt(book.price)}</span> Rs {book.price}</div>
+                        <Link to={"/cart"} class="btn"> Add to cart</Link>
                       </div>
                     </div>
                   </SwiperSlide>

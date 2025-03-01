@@ -32,7 +32,7 @@ function Arrival() {
   return (
     <>
       <section class="arrivals" id="arrivals">
-        <h1 class="heading"> <span>new arrivals</span> </h1>
+        <h1 class="heading"> <span> New Arrivals</span> </h1>
         <div class="arrivals-slider">
           <div class="a_wrapper">
             {
@@ -44,14 +44,7 @@ function Arrival() {
                     </div>
                     <div class="content">
                       <h3>{book.name}</h3>
-                      <div class="price">Rs {book.price}<span>Rs {parseInt(book.price) + 200}</span></div>
-                      <div class="stars">
-                        <i> <FaStar /> </i>
-                        <i> <FaStar /> </i>
-                        <i> <FaStar /> </i>
-                        <i> <FaStar /> </i>
-                        <i> <FiStar /> </i>
-                      </div>
+                      <div class="price"><span> Rs {parseInt(book.price) + parseInt(book.price)}</span> Rs {book.price}</div>
                     </div>
                   </Link>
                 )

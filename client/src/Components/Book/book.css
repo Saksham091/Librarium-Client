@@ -11,7 +11,6 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex: 1;
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -21,7 +20,7 @@ body {
     justify-content: space-around;
     padding: 20px;
     height: auto;
-    margin-top: 0.5%;
+    gap: 1%;
     flex-direction: column;
 }
 
@@ -29,14 +28,12 @@ body {
     width: 100%;
     max-width: 400px;
     border-radius: 8px;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
+    height: fit-content;
+    max-height: fit-content;
 }
 
 .book_info {
     flex: 1;
-    margin-left: 20px;
 }
 
 .book_name {

@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-section{
-    padding:5rem 9%;
-}
-
 .newsletter{
     background:url(../../../assets/letter_bg.jpg) no-repeat;
     background-size: cover;
@@ -12,6 +8,7 @@ section{
     height: 55rem;
     display: flex;
     align-items: center;
+    padding:5rem 9%;
 }
 
 .newsletter form{

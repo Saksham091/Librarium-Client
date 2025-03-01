@@ -106,7 +106,7 @@ function Login() {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    if (data) {
+                    if (data.token) {
                         setError(false);
                         sessionStorage.setItem('userId', data.token)
                         navigate('/home');
@@ -138,21 +138,6 @@ function Login() {
                             </div>
                             {error && <p className='error'>Please enter a valid username or password</p>}
                             <input type="submit" onClick={(e) => loginUser(e)} value="Login" class="button solid" />
-                            <p class="social-text">Or Sign in with social platforms</p>
-                            <div class="social-media">
-                                <a href="#" class="social-icon">
-                                    <i> <FaFacebookF /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaTwitter /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaGoogle /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaLinkedinIn /> </i>
-                                </a>
-                            </div>
                         </form>
                         <form action="#" class="sign-up-form login">
                             <h2 class="title">Sign up</h2>
@@ -175,21 +160,6 @@ function Login() {
                             </div>
                             <input type="submit" onClick={(e) => signupUser(e)} class="button" value="Sign up" />
                             <p className='update_info'>{update}</p>
-                            <p class="social-text">Or Sign up with social platforms</p>
-                            <div class="social-media">
-                                <a href="#" class="social-icon">
-                                    <i> <FaFacebookF /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaTwitter /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaGoogle /> </i>
-                                </a>
-                                <a href="#" class="social-icon">
-                                    <i> <FaLinkedinIn /> </i>
-                                </a>
-                            </div>
                         </form>
                     </div>
                 </div>

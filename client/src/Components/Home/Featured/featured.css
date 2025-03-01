@@ -5,7 +5,7 @@ section {
 }
 
 .featured {
-    height: 70vh;
+    height: 85vh;
 }
 
 .featured .featured-slider .box {
@@ -82,7 +82,7 @@ section {
 }
 
 .slideswiper {
-    height: 47vh !important;
+    height: fit-content !important;
 }
 
 .swiper-button-next,

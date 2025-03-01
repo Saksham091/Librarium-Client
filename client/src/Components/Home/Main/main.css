@@ -27,6 +27,10 @@ section{
     margin-top: 2rem;
 }
 
+.home .row .books-slider .wrapper .m_book_img{
+    margin: 0.5rem;
+}
+
 .home .row .books-slider a img{
     height: 25rem;
 }

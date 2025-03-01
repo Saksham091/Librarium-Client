@@ -48,8 +48,8 @@ function Main() {
               {
                 book.map((book) => {
                   return (
-                    <Link to={`/book/${book._id}`} class="">
-                      <img src={book.image} alt="book" />
+                    <Link to={`/book/${book._id}`}>
+                      <img src={book.image} alt="book" class="m_book_img" />
                     </Link>
                   )
                 })

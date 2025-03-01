@@ -43,8 +43,8 @@ function Arrival() {
                       <img src={book.image} alt="book" />
                     </div>
                     <div class="content">
-                      <h3>Magic Map</h3>
-                      <div class="price">Rs 275 <span>Rs550</span></div>
+                      <h3>{book.name}</h3>
+                      <div class="price">Rs {book.price}<span>Rs {parseInt(book.price) + 200}</span></div>
                       <div class="stars">
                         <i> <FaStar /> </i>
                         <i> <FaStar /> </i>

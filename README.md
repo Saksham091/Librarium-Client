@@ -1,5 +1,5 @@
 # Librarium
-This is a React project created with  `npx create-react-app client`.
+Librarium is a website, where book lovers find their favorite books online. It is designed to make buying books, then whether you're a seasoned reader, a student hitting the books, or just looking for your next favorite one to read. Librarium contains a diverse of genres, ensuring there's something for everyone.
 
 ## 🚀 Live Demo
 Check out the deployed version of the app: 🔗 **[Librarium](https://librarium081.vercel.app/)**

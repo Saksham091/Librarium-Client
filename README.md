@@ -1,6 +1,9 @@
 # Librarium
 Librarium is a website, where book lovers find their favorite books online. It is designed to make buying books, then whether you're a seasoned reader, a student hitting the books, or just looking for your next favorite one to read. Librarium contains a diverse of genres, ensuring there's something for everyone.
 
+## 🔗 Backend Repository
+The backend for Librarium is available here: [Librarium Backend Repository](https://github.com/Saksham091/Librarium-Server)
+
 ## 🚀 Live Demo
 Check out the deployed version of the app: 🔗 **[Librarium](https://librarium081.vercel.app/)**
 
@@ -56,9 +59,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 * Custom Book API (Self-hosted data source)
 * Node.js & Express (Backend)
 * MongoDB (Database)
-
-## 🔗 Backend Repository
-The backend for Librarium is available here: [Librarium Backend Repository](https://github.com/Saksham091/Librarium-Server)
 
 Enjoy exploring the world of books with Librarium!. 😊
 
